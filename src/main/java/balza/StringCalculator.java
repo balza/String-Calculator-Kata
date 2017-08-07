@@ -1,7 +1,9 @@
 package balza;
 
+import java.util.StringTokenizer;
+
 /**
- * Hello world!
+ * String Calculator Kata
  */
 public class StringCalculator {
 
@@ -9,7 +11,13 @@ public class StringCalculator {
         if (s.equals("")) {
             return 0;
         } else {
-            return 3;
+            StringTokenizer stringTokenizer = new StringTokenizer(s, ",");
+            int result = 0;
+            while (stringTokenizer.hasMoreTokens()) {
+                String token = stringTokenizer.nextToken();
+                result += Integer.valueOf(token);
+            }
+            return result;
         }
     }
 }

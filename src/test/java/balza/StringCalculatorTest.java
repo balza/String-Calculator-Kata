@@ -27,4 +27,10 @@ public class StringCalculatorTest {
         assertEquals(3, app.add("1,2"));
     }
 
+    @Test
+    public void testUnknownAmountOfNumbers(){
+        assertEquals(6, app.add("1,2,3"));
+        assertEquals(10, app.add("1,2,3,1,1,1,1"));
+    }
+
 }

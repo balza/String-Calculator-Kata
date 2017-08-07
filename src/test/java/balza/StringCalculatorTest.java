@@ -33,4 +33,9 @@ public class StringCalculatorTest {
         assertEquals(10, app.add("1,2,3,1,1,1,1"));
     }
 
+    @Test
+    public void testNewLines(){
+        assertEquals(6, app.add("1\n2,3"));
+    }
+
 }

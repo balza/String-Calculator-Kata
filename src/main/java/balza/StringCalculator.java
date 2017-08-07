@@ -11,14 +11,23 @@ public class StringCalculator {
         if (s.equals("")) {
             return 0;
         } else {
-            StringTokenizer stringTokenizer = new StringTokenizer(s, ",");
-            int result = 0;
+            int value = 0;
+            StringTokenizer stringTokenizer = new StringTokenizer(s, "\n");
             while (stringTokenizer.hasMoreTokens()) {
-                String token = stringTokenizer.nextToken();
-                result += Integer.valueOf(token);
+                value += tokenizeString(stringTokenizer.nextToken());
             }
-            return result;
+            return value;
         }
+    }
+
+    private int tokenizeString(String s) {
+        StringTokenizer stringTokenizer = new StringTokenizer(s, ",");
+        int result = 0;
+        while (stringTokenizer.hasMoreTokens()) {
+            String token = stringTokenizer.nextToken();
+            result += Integer.valueOf(token);
+        }
+        return result;
     }
 }
 

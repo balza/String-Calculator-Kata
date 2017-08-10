@@ -61,4 +61,9 @@ public class StringCalculatorTest {
         }
     }
 
+    @Test
+    public void testGreaterThen1000() throws NegativeNotAllowedException {
+        assertEquals(2, app.add("//;\n2;1001"));
+    }
+
 }

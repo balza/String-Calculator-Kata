@@ -21,7 +21,8 @@ public class StringCalculator {
                 int value = Integer.valueOf(stringTokenizer.nextToken());
                 if (value < 0)
                     negatives += value + " ";
-                result += value;
+                if (value < 1000)
+                    result += value;
             }
             if (negatives.length()>0)
                 throw new NegativeNotAllowedException("Negative not allowed " + negatives.trim());

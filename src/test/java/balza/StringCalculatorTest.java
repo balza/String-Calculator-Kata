@@ -66,4 +66,9 @@ public class StringCalculatorTest {
         assertEquals(2, app.add("//;\n2;1001"));
     }
 
+    @Test
+    public void testAnyLenghtDelimiter() throws NegativeNotAllowedException {
+        assertEquals(6, app.add("//[***]\n1***2***3"));
+    }
+
 }

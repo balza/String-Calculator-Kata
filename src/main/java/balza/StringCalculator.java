@@ -13,6 +13,8 @@ public class StringCalculator {
         } else {
             int result = 0;
             String customDelimiter = "";
+            if (s.indexOf("//[") == 0)
+                customDelimiter = s.substring(s.indexOf("//[") + 1, s.indexOf("\n"));
             if (s.indexOf("//") == 0)
                 customDelimiter = s.substring(s.indexOf("//") + 1, s.indexOf("\n"));
             StringTokenizer stringTokenizer = new StringTokenizer(s, "\n," + customDelimiter);

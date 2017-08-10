@@ -12,7 +12,10 @@ public class StringCalculator {
             return 0;
         } else {
             int result = 0;
-            StringTokenizer stringTokenizer = new StringTokenizer(s, "\n,");
+            String customDelimiter = "";
+            if (s.indexOf("//") == 0)
+                customDelimiter = s.substring(s.indexOf("//") + 1, s.indexOf("\n"));
+            StringTokenizer stringTokenizer = new StringTokenizer(s, "\n," + customDelimiter);
             while (stringTokenizer.hasMoreTokens()) {
                 result += Integer.valueOf(stringTokenizer.nextToken());
             }

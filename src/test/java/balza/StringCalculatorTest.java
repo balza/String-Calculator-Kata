@@ -45,18 +45,18 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void testNegativeNumber(){
+    public void testNegativeNumber() {
         try {
             app.add("//;\n1;-2");
             fail();
-        }catch (NegativeNotAllowedException negativeNotAllowedException){
+        } catch (NegativeNotAllowedException negativeNotAllowedException) {
             assertEquals("Negative not allowed -2", negativeNotAllowedException.getMessage());
         }
 
         try {
             app.add("//;\n1;-2;-5");
             fail();
-        }catch (NegativeNotAllowedException negativeNotAllowedException){
+        } catch (NegativeNotAllowedException negativeNotAllowedException) {
             assertEquals("Negative not allowed -2 -5", negativeNotAllowedException.getMessage());
         }
     }
@@ -71,4 +71,9 @@ public class StringCalculatorTest {
         assertEquals(6, app.add("//[***]\n1***2***3"));
     }
 
+    @Test
+    public void testMultipleDelimiter() throws NegativeNotAllowedException {
+        assertEquals(6, app.add("//[*][%]\n1*2%3"));
+        assertEquals(11, app.add("//[****][%%%][^^^]\n1****2%%%3^^^5"));
+    }
 }
